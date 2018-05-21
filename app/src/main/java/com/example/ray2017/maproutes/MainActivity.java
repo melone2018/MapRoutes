@@ -1,6 +1,7 @@
 package com.example.ray2017.maproutes;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Address;
@@ -18,6 +19,8 @@ import android.support.v7.widget.Toolbar;
 
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     ArrayList markerPoints= new ArrayList();
     private Toolbar toolbar;
+    String mode = "mode=driving";
     private static final String TAG = "MapActivity";
     private static final String FINE_LOCATION = android.Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -200,6 +204,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.fb_login:
+                Intent intent = new Intent(MainActivity.this, FacebookActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -377,7 +393,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // Sensor enabled
         String sensor = "sensor=false";
-        String mode = "mode=walking";
+       // String mode = "mode=walking";
         // Building the parameters to the web service
         String parameters = str_origin + "&" + str_dest + "&" + sensor + "&" + mode;
 
@@ -427,5 +443,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             urlConnection.disconnect();
         }
         return data;
+    }
+
+    public void setDialogChoices(){
+
     }
 }
