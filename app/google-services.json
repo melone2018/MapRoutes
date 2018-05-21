@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "219205967449",
+    "firebase_url": "https://maproutes-935b9.firebaseio.com",
+    "project_id": "maproutes-935b9",
+    "storage_bucket": "maproutes-935b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219205967449:android:478b6a2b76611f71",
+        "android_client_info": {
+          "package_name": "com.example.ray2017.maproutes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219205967449-puj47v1barqqucotnoai5j4ijn08hhhq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOJa5lm08r5o9MiOcbW5bM44kB6Eznugw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

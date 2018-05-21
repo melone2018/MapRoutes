@@ -10,4 +10,8 @@
     <item android:id="@+id/google_login"
         android:title="Google Login"
         app:showAsAction="never"/>
+
+    <item android:id="@+id/cur_location"
+        android:title="Current Location"
+        app:showAsAction="never"/>
 </menu>

@@ -213,6 +213,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 Intent intent = new Intent(MainActivity.this, FacebookActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.google_login:
+                Intent intentGoogle = new Intent(MainActivity.this, GoogleActivity.class);
+                startActivity(intentGoogle);
+                return true;
+            case R.id.cur_location:
+                getDeviceLocation();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -257,7 +264,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 if (markerPoints.size() > 1) {
                     markerPoints.clear();
                     mMap.clear();
-                    getDeviceLocation();
 
                 }
 
@@ -273,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 if (markerPoints.size() == 1) {
                     options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
                 } else if (markerPoints.size() == 2) {
-                    options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                    options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
                 }
 
                 // Add new marker to the Google Map Android API V2
@@ -445,7 +451,4 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         return data;
     }
 
-    public void setDialogChoices(){
-
-    }
 }
